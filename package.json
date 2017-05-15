@@ -1,6 +1,6 @@
 {
   "name": "brain-games1505",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "brain-games",
   "main": "index.js",
   "scripts": {
@@ -21,10 +21,14 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-stage-0": "^6.24.1"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.7"
   }
 }
