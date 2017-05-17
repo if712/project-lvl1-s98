@@ -1,6 +1,6 @@
 {
   "name": "brain-games1505",
-  "version": "1.0.1",
+  "version": "2.0.2",
   "description": "brain-games",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,8 @@
     "eslint-plugin-import": "^2.2.0"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "dependencies": {
     "readline-sync": "^1.4.7"
