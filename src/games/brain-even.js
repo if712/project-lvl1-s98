@@ -1,5 +1,5 @@
 import game from '../';
-import getRandom from '../math';
+import { getRandom } from '../math';
 
 const instruction = 'Answer "yes" if number even otherwise answer "no".';
 

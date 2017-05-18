@@ -1,5 +1,5 @@
 import game from '../';
-import getRandom from '../math';
+import { getRandom } from '../math';
 
 const instruction = 'What is the result of the expression?';
 
