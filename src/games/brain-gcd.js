@@ -1,7 +1,7 @@
 import game from '../';
 import { getRandom, getGcd } from '../math';
 
-const instruction = 'What is the result of the expression?';
+const instruction = 'Find the greatest common divisor of given numbers.';
 
 const gcdGame = () => {
   const randNum1 = getRandom(1, 100);
