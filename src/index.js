@@ -12,7 +12,7 @@ const game = (instruction, getGameState) => {
 
   const iter = (count) => {
     if (count === 0) {
-      console.log(`Congratulations, ${userName}!!`);
+      console.log(`Congratulations, ${userName}!`);
       return;
     }
     const newGameState = getGameState();
