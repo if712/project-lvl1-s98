@@ -2,28 +2,31 @@ import readlineSync from 'readline-sync';
 
 const gameRepeatCount = 3;
 
+const showMessage = message => console.log(message);
+const getAnswer = question => readlineSync.question(question);
+
 const game = (instruction, getGameState) => {
-  console.log('Welcome to the Brain Games!');
+  showMessage('Welcome to the Brain Games!');
   if (instruction !== '') {
-    console.log(`${instruction}\n`);
+    showMessage(`${instruction}\n`);
   }
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!\n`);
+  const userName = getAnswer('May I have your name? ');
+  showMessage(`Hello, ${userName}!\n`);
 
   const iter = (count) => {
     if (count === 0) {
-      console.log(`Congratulations, ${userName}!`);
+      showMessage(`Congratulations, ${userName}!`);
       return;
     }
     const newGameState = getGameState();
-    console.log(`Question: ${newGameState.question}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (answer.toLowerCase() === String(newGameState.correctAnswer)) {
-      console.log('Correct!');
+    showMessage(`Question: ${newGameState.question}`);
+    const answer = getAnswer('Your answer: ');
+    if (answer.toLowerCase() === newGameState.correctAnswer) {
+      showMessage('Correct!');
       iter(count - 1);
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${newGameState.correctAnswer}'.`);
-      console.log(`Let's try again, ${userName}!`);
+      showMessage(`'${answer}' is wrong answer ;(. Correct answer was '${newGameState.correctAnswer}'.`);
+      showMessage(`Let's try again, ${userName}!`);
     }
   };
   return iter(gameRepeatCount);

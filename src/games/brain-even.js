@@ -1,10 +1,10 @@
 import game from '../';
-import { getRandom } from '../math';
+import { getRandomInt } from '../math';
 
 const instruction = 'Answer "yes" if number even otherwise answer "no".';
 
 const evenGame = () => {
-  const randNum = getRandom(1, 100);
+  const randNum = getRandomInt(1, 100);
   const question = randNum;
   const correctAnswer = randNum % 2 === 0 ? 'yes' : 'no';
   return { question, correctAnswer };
