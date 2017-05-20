@@ -1,9 +1,12 @@
 import game from '../';
-import { getRandomInt, getArrayFromNum, getNumFromArray } from '../math';
+import { getRandomInt } from '../math';
 
 const instruction = 'Balance the given number.';
 
-const getBalance = (newArr) => {
+const getArrayFromNum = num => num.toString().split('').map(n => parseInt(n, 10));
+const getNumFromArray = arr => parseInt(arr.join(''), 10);
+
+const getBalancedNum = (newArr) => {
   const sortedArr = newArr.slice().sort();
   if (sortedArr[sortedArr.length - 1] - sortedArr[0] <= 1) {
     return sortedArr;
@@ -21,14 +24,14 @@ const getBalance = (newArr) => {
     newElem2 = ((sum - 1) / 2) + 1;
   }
   sortedArr.push(newElem1, newElem2);
-  return getBalance(sortedArr);
+  return getBalancedNum(sortedArr);
 };
 
 const balanceGame = () => {
   const randNum = getRandomInt(1, 1000);
   const question = `${randNum}`;
   const newArr = getArrayFromNum(randNum);
-  const balancedArr = getBalance(newArr);
+  const balancedArr = getBalancedNum(newArr);
   const newNum = getNumFromArray(balancedArr);
   const correctAnswer = `${newNum}`;
   return { question, correctAnswer };

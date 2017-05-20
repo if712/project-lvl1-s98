@@ -22,7 +22,8 @@ const calcGame = () => {
       correctAnswer = String(randNum1 * randNum2);
       break;
     default:
-      console.log('error');
+      question = `${randNum1} * ${randNum2}`;
+      correctAnswer = String(randNum1 * randNum2);
       break;
   }
   return { question, correctAnswer };
